@@ -57,11 +57,11 @@ namespace ACM.BL
         /// </summary>
         public bool Validate()
         {
-            var isValidate = true;
+            var isValid = true;
 
-            if (OrderDate == null) isValidate = false;
+            if (OrderDate == null) isValid = false;
 
-            return isValidate;
+            return isValid;
         }
 
     }
