@@ -32,7 +32,7 @@ namespace ACM.BL
             var isValid = true;
 
             if (string.IsNullOrWhiteSpace(ProductName)) isValid = false;
-            if (string.IsNullOrWhiteSpace(ProductDescription)) isValid = false;
+            if (CurrentPrice == null) isValid = false;
 
             return isValid;
         }
