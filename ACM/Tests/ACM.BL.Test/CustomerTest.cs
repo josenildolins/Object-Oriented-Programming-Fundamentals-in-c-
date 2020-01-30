@@ -82,44 +82,44 @@ namespace ACM.BL.Test
             Assert.AreEqual(3, Customer.InstanceCount);
         }
 
-        [TestMethod]
-        public void Validate()
-        {
-           //-- Arrange
-            var customer = new Customer()
-            {
-                Lastname = "Baggings",
-                EmailAddress = "fbaggings@hobbiton.me"
-            };
+        //[TestMethod]
+        //public void Validate()
+        //{
+        //   //-- Arrange
+        //    var customer = new Customer()
+        //    {
+        //        Lastname = "Baggings",
+        //        EmailAddress = "fbaggings@hobbiton.me"
+        //    };
 
-            var expected = true;
+        //    var expected = true;
 
-            //-- Act
-            var actual = customer.Validate();
+        //    //-- Act
+        //    var actual = customer.Validate();
 
-            //-- Assert
-            Assert.AreEqual(expected, actual);
+        //    //-- Assert
+        //    Assert.AreEqual(expected, actual);
 
 
-        }
+        //}
 
-        [TestMethod]
-        public void ValidateMissingLastName()
-        {
-            //-- Arrange
-            var customer = new Customer
-            {
-                EmailAddress = "fbaggings@hobbiton.me"
-            };
+        //[TestMethod]
+        //public void ValidateMissingLastName()
+        //{
+        //    //-- Arrange
+        //    var customer = new Customer
+        //    {
+        //        EmailAddress = "fbaggings@hobbiton.me"
+        //    };
             
-            var expected = false;
+        //    var expected = false;
 
-            //-- Act
-            var actual = customer.Validate();
+        //    //-- Act
+        //    var actual = customer.Validate();
 
-            //-- Assert
-            Assert.AreEqual(expected, actual);
-        }
+        //    //-- Assert
+        //    Assert.AreEqual(expected, actual);
+        //}
     }
 
 
