@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace ACM.BL
 {
@@ -20,7 +15,7 @@ namespace ACM.BL
                 address.StreetLine2 = "Bagshot row";
                 address.City = "Hobbiton";
                 address.State = "Shire";
-                address.Country = "meddle Earth";
+                address.Country = "Middle Earth";
                 address.PostalCode = "144";
             }
 
@@ -33,16 +28,16 @@ namespace ACM.BL
 
             Address address = new Address(1)
             {
-               AddressType = 1,
+                AddressType = 1,
                 StreetLine1 = "Bag End",
                 City = "Hobbiton",
                 State = "Shire",
-               Country = "meddle Earth",
+                Country = "Middle Earth",
                 PostalCode = "144",
-        };
+            };
             addressList.Add(address);
 
-             address = new Address(2)
+            address = new Address(2)
             {
                 AddressType = 2,
                 StreetLine1 = "Green Dragon",
@@ -60,6 +55,6 @@ namespace ACM.BL
         {
             return true;
         }
-        
+
     }
 }

@@ -4,9 +4,9 @@ namespace ACM.BL
 {
     public class Customer
     {
-        public Customer(): this(0)
+        public Customer() : this(0)
         {
-             
+
         }
 
         public Customer(int customerId)
@@ -17,6 +17,7 @@ namespace ACM.BL
 
         public List<Address> AddressList { get; set; }
         public int CustomerId { get; private set; }
+        public int CustomerType { get; set; }
         public string EmailAddress { get; set; }
         public string FirstName { get; set; }
         public string FullName
@@ -24,7 +25,7 @@ namespace ACM.BL
             get
             {
                 string fullName = Lastname;
-                if(!string.IsNullOrWhiteSpace(FirstName))
+                if (!string.IsNullOrWhiteSpace(FirstName))
                 {
                     if (!string.IsNullOrWhiteSpace(fullName))
                     {
@@ -37,7 +38,8 @@ namespace ACM.BL
         }
 
         private string _lastName;
-        public string Lastname { 
+        public string Lastname
+        {
             get
             {
                 return _lastName;
@@ -62,7 +64,7 @@ namespace ACM.BL
             return isValid;
         }
 
-       
+
 
         public static int InstanceCount { get; set; }
     }
