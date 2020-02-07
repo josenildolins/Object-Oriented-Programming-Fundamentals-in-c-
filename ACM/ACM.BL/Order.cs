@@ -1,25 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ACM.BL
 {
    public  class Order
     {
-        public Order()
+        public Order() : this(0)
         {
-           
+
         }
 
         public Order(int orderId)
         {
             OrderId = orderId;
+            OrderItems = new List<OrderItem>();
         }
 
-        public DateTimeOffset? OrderDate{ get; set; }
+        public int CustomerId { get; set; }
+        public DateTimeOffset? OrderDate { get; set; }
         public int OrderId { get; set; }
+        public List<OrderItem> OrderItems { get; set; }
+        public int ShippingAddressId { get; set; };
 
         /// <summary>
         /// Retrieve one customer.
@@ -31,11 +32,11 @@ namespace ACM.BL
         /// </summary>
         public bool Validate()
         {
-            var isValidate = true;
+            var isValid = true;
 
-            if (OrderDate == null) isValidate = false;
+            if (OrderDate == null) isValid = false;
 
-            return isValidate;
+            return isValid;
         }
 
     }

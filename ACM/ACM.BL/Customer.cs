@@ -4,17 +4,20 @@ namespace ACM.BL
 {
     public class Customer
     {
-        public Customer()
+        public Customer() : this(0)
         {
-             
+
         }
 
         public Customer(int customerId)
         {
             CustomerId = customerId;
+            AddressList = new List<Address>();
         }
-        
+
+        public List<Address> AddressList { get; set; }
         public int CustomerId { get; private set; }
+        public int CustomerType { get; set; }
         public string EmailAddress { get; set; }
         public string FirstName { get; set; }
         public string FullName
@@ -22,7 +25,7 @@ namespace ACM.BL
             get
             {
                 string fullName = Lastname;
-                if(!string.IsNullOrWhiteSpace(FirstName))
+                if (!string.IsNullOrWhiteSpace(FirstName))
                 {
                     if (!string.IsNullOrWhiteSpace(fullName))
                     {
@@ -35,7 +38,8 @@ namespace ACM.BL
         }
 
         private string _lastName;
-        public string Lastname { 
+        public string Lastname
+        {
             get
             {
                 return _lastName;
@@ -45,6 +49,21 @@ namespace ACM.BL
                 _lastName = value;
             }
         }
+
+        /// <summary>
+        /// Validate the customer data.
+        /// </summary>
+        /// <returns></returns>
+        public bool Validate()
+        {
+            var isValid = true;
+
+            if (string.IsNullOrWhiteSpace(Lastname)) isValid = false;
+            if (string.IsNullOrWhiteSpace(EmailAddress)) isValid = false;
+
+            return isValid;
+        }
+
 
 
         public static int InstanceCount { get; set; }
